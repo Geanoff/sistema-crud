@@ -1,0 +1,18 @@
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.inputBox label {
+    font-size: 14px;
+    color: dodgerblue;
+}
+
+.inputBox input {
+    padding: 8px;
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}

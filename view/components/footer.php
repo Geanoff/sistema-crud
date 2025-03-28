@@ -1,3 +1,6 @@
-<footer>
-    Rodapé
-</footer>
+    <footer>
+        Rodapé
+    </footer>
+
+</body>
+</html>

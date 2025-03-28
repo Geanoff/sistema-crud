@@ -21,8 +21,7 @@ create table usuario (
 	email varchar(50),
 	telefone varchar(20),
 	data_nascimento date not null, 
-	cpf varchar(11) not null unique,
-	genero varchar(20) not null,
+	cpf varchar(11) not null unique
 );
 
 

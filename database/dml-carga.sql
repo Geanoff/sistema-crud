@@ -1,4 +1,4 @@
-INSERT INTO categorias (nome) VALUES
+INSERT INTO categoria (nome) VALUES
 ('Eletrônicos'),
 ('Eletrodomésticos'),
 ('Roupas e Acessórios'),
@@ -22,7 +22,7 @@ INSERT INTO categorias (nome) VALUES
 
 
 
-INSERT INTO produtos (nome, descricao, preco, categoria_id) VALUES
+INSERT INTO produto (nome, descricao, preco, categoria_id) VALUES
 ('iPhone 15', 'Smartphone com tela OLED de 6,1 polegadas e chip A17.', 5999.00, 1),
 ('Geladeira Samsung 520L', 'Geladeira de 520 litros com tecnologia de refrigeração no-frost.', 3499.00, 2),
 ('Tênis Nike Air Max', 'Tênis de corrida com amortecimento Air Max e design moderno.', 499.90, 3),
@@ -43,3 +43,21 @@ INSERT INTO produtos (nome, descricao, preco, categoria_id) VALUES
 ('Câmera de Segurança Arlo Pro 4', 'Câmera de segurança sem fio com alta definição e visão noturna.', 1299.00, 18),
 ('Mala de Viagem Samsonite', 'Mala resistente e leve, com compartimentos para organização.', 899.00, 19),
 ('Curso de Marketing Digital', 'Curso online de marketing digital com módulos sobre SEO, Ads e redes sociais.', 499.00, 20);
+
+
+INSERT INTO usuario (nome, email, telefone, data_nascimento, cpf) VALUES
+('João Silva', 'joao.silva@email.com', '(11) 99999-0001', '1990-01-15', '12345678901'),
+('Maria Oliveira', 'maria.oliveira@email.com', '(11) 99999-0002', '1985-02-20', '12345678902'),
+('Carlos Souza', 'carlos.souza@email.com', '(11) 99999-0003', '1992-03-25', '12345678903'),
+('Ana Lima', 'ana.lima@email.com', '(11) 99999-0004', '1995-04-10', '12345678904'),
+('Pedro Santos', 'pedro.santos@email.com', '(11) 99999-0005', '1988-05-30', '12345678905'),
+('Juliana Costa', 'juliana.costa@email.com', '(11) 99999-0006', '1991-06-12', '12345678906'),
+('Lucas Almeida', 'lucas.almeida@email.com', '(11) 99999-0007', '1994-07-05', '12345678907'),
+('Fernanda Rocha', 'fernanda.rocha@email.com', '(11) 99999-0008', '1990-08-21', '12345678908'),
+('Ricardo Mendes', 'ricardo.mendes@email.com', '(11) 99999-0009', '1987-09-09', '12345678909'),
+('Camila Nogueira', 'camila.nogueira@email.com', '(11) 99999-0010', '1993-10-14', '12345678910'),
+('Eduardo Ramos', 'eduardo.ramos@email.com', '(11) 99999-0011', '1989-11-17', '12345678911'),
+('Bianca Ferreira', 'bianca.ferreira@email.com', '(11) 99999-0012', '1996-12-22', '12345678912'),
+('Gustavo Teixeira', 'gustavo.teixeira@email.com', '(11) 99999-0013', '1986-01-08', '12345678913'),
+('Larissa Carvalho', 'larissa.carvalho@email.com', '(11) 99999-0014', '1997-02-26', '12345678914'),
+('Marcos Antunes', 'marcos.antunes@email.com', '(11) 99999-0015', '1984-03-18', '12345678915');

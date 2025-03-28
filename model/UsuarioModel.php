@@ -1,8 +1,7 @@
 <?php 
     require_once __DIR__ . "\..\config\database.php";
-
-    Class Categoria {
-        private $tabela = 'categoria';
+    Class UsuarioModel {
+        private $tabela = 'usuario';
         private $pdo; 
 
         public function __construct() {
@@ -10,8 +9,8 @@
             $this->pdo = $pdo;
         }
 
-        function buscarTodos() {
-            $query = "select * from $this->tabela";//order by id desc
+        function listar() {
+            $query = "SELECT * FROM $this->tabela";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
@@ -19,5 +18,3 @@
         }
     }
 ?>
-
-

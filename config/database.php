@@ -1,6 +1,5 @@
 <?php 
     $host = 'localhost';
-    $host = 'localhost';
     $dbname = 'devmedia';
     $user = 'root';
     $password = '';
@@ -12,5 +11,4 @@
     } catch (PDOException $e) {
         echo "Erro na conexão: " . $e->getMessage();
     }
-    
 ?>
