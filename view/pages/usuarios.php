@@ -5,7 +5,10 @@
     $lista = $usuarioModel->listar();
 ?>
 <?php require_once __DIR__ . '..\..\components\header.php'; ?>
-
+    <div id="sucesso" class="toast sucesso">
+        <i class="fa-regular fa-circle-check"></i>
+        Operação realizada com sucesso!
+    </div>
     <main>
         <h1>Categorias</h1>
 
@@ -37,7 +40,7 @@
                                 </button>
                             </form> -->
 
-                            <form action="cadastro.php" method="GET">
+                            <form action="editar-usuario.php" method="GET">
                                 <input type="hidden" name="id" value="<?php echo $usuario->id ?>">
                                 <button>
                                     <i class="fa-solid fa-edit"></i>

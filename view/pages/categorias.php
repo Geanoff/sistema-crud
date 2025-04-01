@@ -11,7 +11,10 @@
     //     echo "ID: {$i->id} - Nome: {$i->nome} <br>";
     // }
 ?>
-
+<div id="sucesso" class="toast sucesso">
+        <i class="fa-regular fa-circle-check"></i>
+        Operação realizada com sucesso!
+    </div>
 <main>
         <h1>Categorias</h1>
 

@@ -22,9 +22,9 @@
         <input type="hidden" name="id" value="<?php echo $lista->id ?>">
         <div class="inputBox">
             <label for="nome">Nome</label>
-            <input type="text" name="nome" value="<?php echo $lista->nome ?>">
+            <input type="text" name="nome" value="<?php echo $lista->nome ?>" required>
         </div>
-        <button>SALVAR</button>
+        <button class="btn">ALTERAR</button>
     </form>
 </main>
 

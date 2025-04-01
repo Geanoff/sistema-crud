@@ -6,7 +6,10 @@
 ?>
 
 <?php require_once __DIR__ . '..\..\components\header.php'; ?>
-
+    <div id="sucesso" class="toast sucesso">
+        <i class="fa-regular fa-circle-check"></i>
+        Operação realizada com sucesso!
+    </div>
     <main>
         <h1>Produtos</h1>
         <table class="table">
@@ -32,7 +35,7 @@
                                 </button>
                             </form> -->
 
-                            <form action="cadastro.php" method="GET">
+                            <form action="editar-produto.php" method="GET">
                                 <input type="hidden" name="id" value="<?php echo $i->id ?>">
                                 <button>
                                     <i class="fa-solid fa-edit"></i>
