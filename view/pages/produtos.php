@@ -54,7 +54,7 @@
                             </form>
 
                             <form action="produtos.php" method="POST">
-                                <input type="text" name="id" value="<?php echo $i->id ?>">
+                                <input type="hidden" name="id" value="<?php echo $i->id ?>">
                                 <button onclick="return confirm('Tem certeza que deseja excluir o filme?')">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
