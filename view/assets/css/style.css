@@ -20,7 +20,7 @@ header {
     grid-column: span 2; 
     background-color: cadetblue;
     color: white;
-    padding: 15px;
+    /* padding: 15px; */
     text-align: center;
 }
 
@@ -35,7 +35,14 @@ aside {
 /* Conteúdo principal */
 main {
     padding: 20px;
-    background-color: white;
+    background-color: #f0f0f0;
+}
+
+main h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: darkslategray;
 }
 
 /* Footer ocupa toda a largura na parte inferior */
@@ -61,7 +68,7 @@ aside nav ul {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    color: purple;
+    color: steelblue;
 }
 
 aside nav li {
@@ -70,16 +77,20 @@ aside nav li {
     border-radius: 5px;
     transition: .3s;
     padding-left: 8px;
+    cursor: pointer;
 }
 
 aside nav li:hover {
-    background-color: aquamarine;
-    cursor: pointer;
+    background-color: rgb(197, 228, 255);
+}
+aside nav li.active {
+    background-color: rgb(197, 228, 255);
+    border-radius: 5px 50px 50px 5px;
 }
 
 aside nav a {
     text-decoration: none;
-    color: purple;
+    color: steelblue;
     /* background-color: red; */
     display: block;
     width: 100%;
@@ -94,18 +105,41 @@ aside nav a {
 table {
     text-align: left;
     width: 100%;
-    /* background-color: red; */
-    /* width: 100%; */
+    border-collapse: separate;
+    border-spacing: 0 10px;
 }
 
-/* table tbody tr {
-    display: flex;
-    align-items: center;
-} */
+#table-categoria {
+    width: fit-content;
+}
 
-table tbody tr:nth-child(even) {
+table tbody tr {
+    background-color: white;
+}
+
+table tbody td {
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+table tbody td:first-child {
+    padding-left: 10px;
+}
+table tbody td:last-child {
+    padding-right: 10px;
+}
+
+table thead th {
+    font-weight: 700;
+    color: darkslategray;
+    font-size: 13px;
+    padding-right: 20px;
+}
+
+
+/* table tbody tr:nth-child(even) {
     background-color: #f0f0f0;
-}
+} */
 
 
 table tbody td:last-child {
@@ -120,6 +154,11 @@ table tbody td:last-child form button{
     border: none;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border-radius: 2px;
+    cursor: pointer;
+}
+
+table tbody td:last-child form button:hover{
+    filter: brightness(.9);
 }
 
 
@@ -161,12 +200,4 @@ table tbody td:last-child form button{
 
 .toast.erro {
     border-left: 6px solid orangered;
-}
-
-.btn {
-    padding: 10px 20px;
-    border-radius: 4px;
-    border: none;
-    background-color: limegreen;
-    margin-top: 10px;
 }

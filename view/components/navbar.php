@@ -1,3 +1,3 @@
 <header>
-    <nav>Navbar</nav>
+    <nav></nav>
 </header>

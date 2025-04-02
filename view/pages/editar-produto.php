@@ -1,5 +1,9 @@
 <?php
     require_once __DIR__ . "\..\..\model\ProdutoModel.php";
+    require_once __DIR__ . "\..\..\model\CategoriaModel.php";
+    $categoriaModel = new CategoriaModel();
+    $nomecat = $categoriaModel->listar();
+
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $id = $_GET['id'];
         $produtoModel = new ProdutoModel();
@@ -33,6 +37,14 @@
         <div class="inputBox">
             <label for="preco">Valor</label>
             <input type="text" name="preco" value="<?php echo $lista->preco ?>" required>
+        </div>
+        <div class="inputBox">
+            <label for="categoria">Categoria</label>
+            <select name="categoria" id="categoria">
+                <?php foreach ($nomecat as $i) { ?>
+                    <option value="<?php echo $i->id ?>"><?php echo $i->nome ?></option>
+                <?php } ?>
+            </select>
         </div>
         <button class="btn">ALTERAR</button>
     </form>

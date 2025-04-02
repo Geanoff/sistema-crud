@@ -10,7 +10,7 @@
         }
 
         function listar() {
-            $query = "SELECT * FROM $this->tabela";
+            $query = "SELECT p.*, c.nome as nomecat FROM $this->tabela p INNER JOIN categoria c ON p.categoria_id = c.id";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
@@ -39,6 +39,20 @@
             } else {
                 return header('Location: produtos.php?mensagem=erro');
             } 
+        }
+
+        function excluir($id) {
+            $query = "DELETE FROM $this->tabela WHERE id = :id";
+            $stmt = $this->pdo->prepare($query);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        
+            if ($stmt->rowCount() > 0) {
+                header('Location: produtos.php?mensagem=sucesso');
+            } else {
+                header('Location: produtos.php?mensagem=erro');
+            }
+            exit();
         }
     }
 ?>

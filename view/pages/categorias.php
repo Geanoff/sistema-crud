@@ -18,7 +18,7 @@
 <main>
         <h1>Categorias</h1>
 
-        <table class="table">
+        <table class="table" id="">
             <thead>
                 <th>ID</th>
                 <th>Nome</th>

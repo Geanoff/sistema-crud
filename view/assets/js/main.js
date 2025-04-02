@@ -20,6 +20,9 @@ function verificarMensagem() {
     if (mensagem === 'sucesso') {
         mostrar_toast("sucesso");
     }
+    else if (mensagem === 'erro') {
+        mostrar_toast("erro");
+    }
 }
 
 window.onload = function() {
