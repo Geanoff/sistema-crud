@@ -1,10 +1,10 @@
 function mostrar_toast(id) {
     let toast = document.getElementById(id);
-    toast.style.right = "0px";
+    toast.style.top = "50px";
     toast.style.opacity = "1";
 
     setTimeout(() => {
-        toast.style.right = "-300px";
+        toast.style.top = "-60px";
         toast.style.opacity = "0";
     }, 2000);
 }

@@ -12,7 +12,7 @@ create table produto (
 	descricao text not null,
 	preco float not null,
 	categoria_id int,
-	foreign key (categoria_id) references categorias(id)
+	foreign key (categoria_id) references categoria(id)
 );
 
 create table usuario (

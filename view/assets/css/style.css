@@ -24,7 +24,6 @@ header {
     text-align: center;
 }
 
-/* Sidebar na esquerda */
 aside {
     background-color: aliceblue;
     color: white;
@@ -45,7 +44,6 @@ main h1 {
     color: darkslategray;
 }
 
-/* Footer ocupa toda a largura na parte inferior */
 footer {
     grid-column: span 2;
     background-color: grey;
@@ -118,7 +116,7 @@ table tbody tr {
 }
 
 table tbody td {
-    padding: 10px 0;
+    padding: 10px 5px;
     font-size: 14px;
 }
 
@@ -164,21 +162,23 @@ table tbody td:last-child form button:hover{
 
 .toast {
     position: fixed;
-    top: 60px; /* Começa fora da tela */
-    right: -200px;
-    /* max-width: 300px; */
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     padding: 15px;
     border-radius: 0 4px 4px 0;
     font-size: 16px;
     z-index: 1000;
-    transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 0;
     display: flex;
     align-items: center;
     gap: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 5px;
 }
 
 .toast i {
@@ -192,6 +192,7 @@ table tbody td:last-child form button:hover{
 
 .toast.sucesso {
     border-left: 6px solid limegreen;
+    border-right: 6px solid limegreen;
 }
 
 .toast.erro i {
@@ -200,4 +201,19 @@ table tbody td:last-child form button:hover{
 
 .toast.erro {
     border-left: 6px solid orangered;
+}
+
+.btn-criar button {
+    padding: 8px 30px;
+    border: none;
+    border-radius: 50px;
+    background-color: lawngreen;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: darkslategray;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-criar button:hover {
+    filter: brightness(.9);
 }

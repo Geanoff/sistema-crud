@@ -21,6 +21,13 @@
     </div>
     <main>
         <h1>Produtos</h1>
+        <form action="editar-produto.php" method="GET" class="btn-criar">
+            <input type="hidden" name="id" value="">
+                <button>
+                    <i class="fa-solid fa-plus"></i>
+                    NOVO
+                </button>
+        </form>
         <table class="table">
             <thead>
                 <th>ID</th>
@@ -55,7 +62,7 @@
 
                             <form action="produtos.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo $i->id ?>">
-                                <button onclick="return confirm('Tem certeza que deseja excluir o filme?')">
+                                <button onclick="return confirm('Tem certeza que deseja excluir esse produto?')">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </form>

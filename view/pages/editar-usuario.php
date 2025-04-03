@@ -1,10 +1,20 @@
 <?php
     require_once __DIR__ . "\..\..\model\UsuarioModel.php";
-    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $usuarioModel = new UsuarioModel();
+
+    if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id']) && is_numeric($_GET['id'])) {
         $id = $_GET['id'];
-        $usuarioModel = new UsuarioModel();
         $lista = $usuarioModel->buscarId($id); 
-    } 
+    } else {
+        $lista = (object) [
+            'id' => '',
+            'nome' => '',
+            'email' => '',
+            'telefone' => '',
+            'data' => '',
+            'cpf' => '',
+        ];
+    }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $id = $_POST['id'];
@@ -13,8 +23,15 @@
         $telefone = $_POST['telefone'];
         $data = $_POST['data'];
         $cpf = $_POST['cpf'];
-        $usuarioModel = new UsuarioModel();
-        $usuarioModel->editar($id, $nome, $email, $telefone, $data, $cpf); 
+        
+        if (!empty($id)) {
+            $usuarioModel->editar($id, $nome, $email, $telefone, $data, $cpf); 
+        } else {
+            $usuarioModel->criar($nome, $email, $telefone, $data, $cpf);
+        }
+
+        header('Location: usuarios.php?mensagem=sucesso');
+        exit();
     } 
     
 
@@ -23,6 +40,7 @@
 
 <main>
     <form action="editar-usuario.php" method="POST">
+        <h1><?php echo empty($lista->id) ? 'CRIAR NOVO USÚARIO' : 'EDITAR UM USÚARIO'; ?></h1>
         <input type="hidden" name="id" value="<?php echo $lista->id ?>">
         <div class="inputBox">
             <label for="nome">Nome</label>
@@ -44,7 +62,7 @@
             <label for="cpf">CPF</label>
             <input type="text" name="cpf" value="<?php echo $lista->cpf ?>" maxlength="11" minlength="11" required>
         </div>
-        <button class="btn">ALTERAR</button>
+        <button class="btn"><?php echo empty($lista->id) ? 'CRIAR' : 'ALTERAR'; ?></button>
     </form>
 </main>
 

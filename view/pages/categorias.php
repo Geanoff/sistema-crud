@@ -3,6 +3,11 @@
 
     $categoriaModel = new CategoriaModel();
     $lista = $categoriaModel->listar();
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $id = $_POST['id'];
+        $categoriaModel->excluir($id); 
+    } 
 ?>
 
 <?php require_once __DIR__ . '..\..\components\header.php'; ?>
@@ -11,14 +16,25 @@
     //     echo "ID: {$i->id} - Nome: {$i->nome} <br>";
     // }
 ?>
-<div id="sucesso" class="toast sucesso">
+    <div id="sucesso" class="toast sucesso">
         <i class="fa-regular fa-circle-check"></i>
         Operação realizada com sucesso!
     </div>
+    <div id="erro" class="toast erro">
+        <i class="fa-regular fa-circle-check"></i>
+        Falha ao executar operação!<br>
+        ! Pode ter um produto com essa categoria
+    </div>
 <main>
         <h1>Categorias</h1>
-
-        <table class="table" id="">
+        <form action="editar-categoria.php" method="GET" class="btn-criar">
+            <input type="hidden" name="id" value="">
+                <button>
+                    <i class="fa-solid fa-plus"></i>
+                    NOVO
+                </button>
+        </form>
+        <table class="table" id="table-categoria">
             <thead>
                 <th>ID</th>
                 <th>Nome</th>
@@ -44,9 +60,9 @@
                                 </button>
                             </form>
 
-                            <form action="excluir.php" method="POST">
+                            <form action="categorias.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo $i->id ?>">
-                                <button onclick="return confirm('Tem certeza que deseja excluir o filme?')">
+                                <button onclick="return confirm('Tem certeza que deseja excluir essa categoria?')">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </form>

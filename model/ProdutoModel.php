@@ -26,19 +26,41 @@
             return $stmt->fetch(); 
         }
 
-        function editar($id, $nome, $descricao, $preco) {
-            $query = "UPDATE $this->tabela SET nome = :nome, descricao = :descricao, preco = :preco WHERE id = :id";
+        function criar($nome, $descricao, $preco, $categoria) {
+            $query = "INSERT INTO $this->tabela (nome, descricao, preco, categoria_id)
+                      VALUES (:nome, :descricao, :preco, :categoria)";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nome', $nome);
             $stmt->bindParam(':descricao', $descricao);
             $stmt->bindParam(':preco', $preco);
-            $stmt->bindParam(':id', $id);
+            $stmt->bindParam(':categoria', $categoria);
             $stmt->execute();
-            if ($stmt) {
-                return header('Location: produtos.php?mensagem=sucesso');
+            if ($stmt->rowCount() > 0) {
+                header('Location: produtos.php?mensagem=sucesso');
             } else {
-                return header('Location: produtos.php?mensagem=erro');
-            } 
+                header('Location: produtos.php?');
+            }
+        }
+
+        function editar($id, $nome, $descricao, $preco, $catid) {
+            try{
+                $query = "UPDATE $this->tabela SET nome = :nome, descricao = :descricao, preco = :preco, categoria_id = :catid WHERE id = :id";
+                $stmt = $this->pdo->prepare($query);
+                $stmt->bindParam(':nome', $nome);
+                $stmt->bindParam(':descricao', $descricao);
+                $stmt->bindParam(':preco', $preco);
+                $stmt->bindParam(':catid', $catid);
+                $stmt->bindParam(':id', $id);
+                $stmt->execute();
+                if ($stmt->rowCount() > 0) {
+                    header('Location: produtos.php?mensagem=sucesso');
+                } else {
+                    header('Location: produtos.php?');
+                }
+            } catch (PDOException) {
+                header('Location: usuarios.php?mensagem=erro');
+            }
+            exit();
         }
 
         function excluir($id) {

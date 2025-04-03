@@ -9,9 +9,20 @@
         <i class="fa-regular fa-circle-check"></i>
         Operação realizada com sucesso!
     </div>
+    <div id="erro" class="toast erro">
+        <i class="fa-regular fa-circle-check"></i>
+        Falha ao executar operação!<br>
+        ! CPF pode já existir em outro usúario
+    </div>
     <main>
-        <h1>Categorias</h1>
-
+        <h1>Usúarios</h1>
+        <form action="editar-usuario.php" method="GET" class="btn-criar">
+            <input type="hidden" name="id" value="">
+                <button>
+                    <i class="fa-solid fa-plus"></i>
+                    NOVO
+                </button>
+        </form>
         <table class="table">
             <thead>
                 <th>ID</th>
@@ -47,9 +58,9 @@
                                 </button>
                             </form>
 
-                            <form action="excluir.php" method="POST">
+                            <form action="usuarios.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo $usuario->id ?>">
-                                <button onclick="return confirm('Tem certeza que deseja excluir o filme?')">
+                                <button onclick="return confirm('Tem certeza que deseja excluir esse usúario?')">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </form>
