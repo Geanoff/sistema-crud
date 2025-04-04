@@ -10,7 +10,7 @@
         Operação realizada com sucesso!
     </div>
     <div id="erro" class="toast erro">
-        <i class="fa-regular fa-circle-check"></i>
+    <i class="fa-solid fa-triangle-exclamation"></i>
         Falha ao executar operação!<br>
         ! CPF pode já existir em outro usúario
     </div>
@@ -51,14 +51,14 @@
                                 </button>
                             </form> -->
 
-                            <form action="editar-usuario.php" method="GET">
+                            <form action="editar-usuario.php" method="GET" title="Editar">
                                 <input type="hidden" name="id" value="<?php echo $usuario->id ?>">
                                 <button>
                                     <i class="fa-solid fa-edit"></i>
                                 </button>
                             </form>
 
-                            <form action="usuarios.php" method="POST">
+                            <form action="usuarios.php" method="POST" title="Excluir">
                                 <input type="hidden" name="id" value="<?php echo $usuario->id ?>">
                                 <button onclick="return confirm('Tem certeza que deseja excluir esse usúario?')">
                                     <i class="fa-solid fa-trash-can"></i>

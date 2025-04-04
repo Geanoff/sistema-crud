@@ -16,7 +16,7 @@
         Operação realizada com sucesso!
     </div>
     <div id="erro" class="toast erro">
-        <i class="fa-regular fa-circle-check"></i>
+        <i class="fa-solid fa-triangle-exclamation"></i>
         Falha ao executar operação!
     </div>
     <main>
@@ -53,14 +53,14 @@
                                 </button>
                             </form> -->
 
-                            <form action="editar-produto.php" method="GET">
+                            <form action="editar-produto.php" method="GET" title="Editar">
                                 <input type="hidden" name="id" value="<?php echo $i->id ?>">
                                 <button>
                                     <i class="fa-solid fa-edit"></i>
                                 </button>
                             </form>
 
-                            <form action="produtos.php" method="POST">
+                            <form action="produtos.php" method="POST" title="Excluir">
                                 <input type="hidden" name="id" value="<?php echo $i->id ?>">
                                 <button onclick="return confirm('Tem certeza que deseja excluir esse produto?')">
                                     <i class="fa-solid fa-trash-can"></i>

@@ -30,6 +30,3 @@ create table usuario (
 select * from categoria c;
 select * from produto p;
 select * from usuarios u;
-
-alter table usuarios 
-drop column senha;

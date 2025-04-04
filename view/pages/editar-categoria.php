@@ -1,37 +1,37 @@
 <?php
-    require_once __DIR__ . "\..\..\model\CategoriaModel.php";
-    $categoriaModel = new CategoriaModel();
+require_once __DIR__ . "\..\..\model\CategoriaModel.php";
+$categoriaModel = new CategoriaModel();
 
-    if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id']) && is_numeric($_GET['id'])) {
-        $id = $_GET['id'];
-        $lista = $categoriaModel->buscarId($id); 
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $id = $_GET['id'];
+    $lista = $categoriaModel->buscarId($id);
+} else {
+    $lista = (object) [
+        'id' => '',
+        'nome' => ''
+    ];
+}
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = $_POST['id'];
+    $nome = $_POST['nome'];
+
+    if (!empty($id)) {
+        $categoriaModel->editar($id, $nome);
     } else {
-        $lista = (object) [
-            'id' => '',
-            'nome' => ''
-        ];
+        $categoriaModel->criar($nome);
     }
 
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $id = $_POST['id'];
-        $nome = $_POST['nome'];
-        
-        if (!empty($id)) {
-            $categoriaModel->editar($id, $nome); 
-        } else {
-            $categoriaModel->criar($nome); 
-        }
-    
-        header('Location: categorias.php?mensagem=sucesso');
-        exit();
-    } 
+    header('Location: categorias.php?mensagem=sucesso');
+    exit();
+}
 
 
-    
-    
 
-    require_once __DIR__ . '..\..\components\header.php';
+
+
+require_once __DIR__ . '..\..\components\header.php';
 ?>
 
 <main>

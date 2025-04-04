@@ -1,0 +1,51 @@
+table {
+    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+#table-categoria {
+    width: fit-content;
+}
+
+table tbody tr {
+    background-color: white;
+}
+
+table tbody td {
+    padding: 10px 5px;
+    font-size: 14px;
+}
+
+table tbody td:first-child {
+    padding-left: 10px;
+}
+table tbody td:last-child {
+    padding-right: 10px;
+}
+
+table thead th {
+    font-weight: 700;
+    color: darkslategray;
+    font-size: 13px;
+    padding-right: 20px;
+}
+
+table tbody td:last-child {
+    display: flex;
+    gap: 10px;
+}
+
+
+table tbody td:last-child form button {
+    padding: 5px 8px;
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+table tbody td:last-child form button:hover{
+    filter: brightness(.9);
+}
