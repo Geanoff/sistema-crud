@@ -3,6 +3,11 @@
 
     $usuarioModel = new UsuarioModel();
     $lista = $usuarioModel->listar();
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $id = $_POST['id'];
+        $usuarioModel->excluir($id); 
+    } 
 ?>
 <?php require_once __DIR__ . '..\..\components\header.php'; ?>
     <div id="sucesso" class="toast sucesso">
